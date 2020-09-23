@@ -48,8 +48,10 @@ if __name__ == '__main__':
             args = get_args()
             corpus_file = args["-input"]
             vectors_file = args["-output"]
+            print(corpus_file, vectors_file)
             create_vectors(corpus_file, vectors_file)
-        except:
+        except Exception as e:
+            print(e)
             print_invalidArgs_mess()
             print("The following arguments are mandatory:\n")
             print("\t-input\ttraining file path")
